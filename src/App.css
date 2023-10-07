@@ -1,0 +1,32 @@
+:root {
+  --bg1: #d2dbdc;
+  --bg2: #ededed;
+  --color1: #ddd;
+  --flex: flex;
+  --flex-column: column;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg1);
+  margin: 0;
+  font-family: "Segoe UI", Helvetica Neue, Helvetica, Lucida Grande, Arial;
+}
+.app-window {
+  display: var(--flex);
+
+  height: 100vh;
+  background-color: var(--bg2);
+}
+.sidebar {
+  width: 35%;
+  max-width: 415px;
+  display: var(--flex);
+  flex-direction: var(--flex-column);
+  border-right: 1px solid var(--color1);
+}
+
+.content-area {
+  width: 75%;
+}
