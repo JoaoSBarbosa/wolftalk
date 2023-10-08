@@ -1,0 +1,45 @@
+@import url("../root.css");
+
+body {
+  display: var(--flex);
+  align-items: var(--center);
+  justify-content: var(--center);
+  align-items: var(--center);
+  height: 100vh;
+  margin: var(--size0);
+  background-color: #f5f5f5;
+  background-image: url("https://uploaddeimagens.com.br/images/004/631/184/full/social-networks.jpg?1696768003");
+}
+
+.login {
+  background: -webkit-linear-gradient(left, #a58cf4, #3b8bff);
+  border-radius: var(--size10);
+  box-shadow: var(--size0) 8px 16px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  width: 600px;
+  height: 300px;
+  max-width: 90%;
+  display: var(--flex);
+  flex-direction: column;
+  align-items: var(--center);
+}
+
+.login-header {
+  color: var(--color4);
+  font-size: 3rem;
+}
+
+.facebook-button {
+  background-color: #1877f2;
+  color: var(--color4);
+  border: none;
+  padding: var(--size20) var(--size40);
+  font-size: 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.facebook-button:hover {
+  background-color: #0e5a99;
+}

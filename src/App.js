@@ -14,16 +14,19 @@ import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import SearchIcon from "@mui/icons-material/Search";
+import Login from "./components/login";
 
 export default () => {
   // Const states
 
-  const [user, setUser] = useState({
-    id: 1234,
-    avatar:
-      "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
-    name: "João Barbosa",
-  });
+  // const [user, setUser] = useState({
+  //   id: 1234,
+  //   avatar:
+  //     "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+  //   name: "João Barbosa",
+  // });
+
+  const [user, setUser] = useState(null);
   const [chatList, setChatList] = useState([
     {
       chatId: 1,
@@ -82,10 +85,24 @@ export default () => {
   ]);
   const [activeChat, setActiveChat] = useState({});
 
+  const [showNewChat, setShowNewChat] = useState(false);
+
+  const handleNewChat = () => {
+    setShowNewChat(true);
+  };
+
+  if (user === null) {
+    return <Login />;
+  }
   return (
     <div className="app-window">
       <aside className="sidebar ">
-        <NewChat />
+        <NewChat
+          chatList={chatList}
+          user={user}
+          show={showNewChat}
+          setShow={setShowNewChat}
+        />
         <header>
           <img className="header--avatar" src={user.avatar} alt="Avatar user" />
 
@@ -93,7 +110,7 @@ export default () => {
             <div className="header--btn">
               <DonutLargeIcon className="header--icon" />
             </div>
-            <div className="header--btn">
+            <div onClick={handleNewChat} className="header--btn">
               <ChatIcon className="header--icon" />
             </div>
             <div className="header--btn">
