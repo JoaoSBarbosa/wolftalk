@@ -7,6 +7,7 @@ import "./App.css";
 import ChatListItem from "./components/ChatListItem";
 import ChatIntro from "./components/ChatIntro";
 import ChatWindow from "./components/ChatWindow";
+import NewChat from "./components/NewChat";
 
 // Import bibliotecas
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
@@ -16,6 +17,7 @@ import SearchIcon from "@mui/icons-material/Search";
 
 export default () => {
   // Const states
+
   const [user, setUser] = useState({
     id: 1234,
     avatar:
@@ -83,6 +85,7 @@ export default () => {
   return (
     <div className="app-window">
       <aside className="sidebar ">
+        <NewChat />
         <header>
           <img className="header--avatar" src={user.avatar} alt="Avatar user" />
 
