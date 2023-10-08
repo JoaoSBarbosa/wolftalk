@@ -1,0 +1,28 @@
+:root {
+  --bg1: #d2dbdc;
+  --bg2: #ededed;
+  --bg3: #f6f6f6;
+  --color1: #ddd;
+  --color2: #eee;
+  --color3: #999;
+  --color4: #fff;
+  --flex: flex;
+  --flex-column: column;
+  --spaceBetween: space-between;
+  --center: center;
+  --size50: 50px;
+  --size40: 40px;
+  --size20: 20px;
+  --size25: 25px;
+  --size15: 15px;
+  --size10: 10px;
+  --cursorPointer: pointer;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg1);
+  margin: 0;
+  font-family: "Segoe UI", Helvetica Neue, Helvetica, Lucida Grande, Arial;
+}
