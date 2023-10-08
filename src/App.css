@@ -4,6 +4,8 @@
   --color1: #ddd;
   --flex: flex;
   --flex-column: column;
+  --center: center;
+  --size40: 40px;
 }
 * {
   box-sizing: border-box;
@@ -27,6 +29,20 @@ body {
   border-right: 1px solid var(--color1);
 }
 
+header {
+  height: 60px;
+  display: var(--flex);
+  justify-content: space-between;
+
+  align-items: var(--center);
+}
+
+.header--avatar {
+  width: var(--size40);
+  height: var(--size40);
+  border-radius: 20px;
+  cursor: pointer;
+}
 .content-area {
   width: 75%;
 }
