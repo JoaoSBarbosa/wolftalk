@@ -19,14 +19,12 @@ import Login from "./components/login";
 export default () => {
   // Const states
 
-  // const [user, setUser] = useState({
-  //   id: 1234,
-  //   avatar:
-  //     "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
-  //   name: "João Barbosa",
-  // });
-
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({
+    id: 1234,
+    avatar:
+      "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+    name: "João Barbosa",
+  });
   const [chatList, setChatList] = useState([
     {
       chatId: 1,
@@ -91,6 +89,13 @@ export default () => {
     setShowNewChat(true);
   };
 
+  const handleLoginData = async (infoUser) => {
+    let newUser = {
+      id: infoUser.uid,
+      name: infoUser.displayName,
+      avatar: infoUser.photoURL,
+    };
+  };
   if (user === null) {
     return <Login />;
   }
