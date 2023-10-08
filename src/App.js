@@ -16,6 +16,12 @@ import SearchIcon from "@mui/icons-material/Search";
 
 export default () => {
   // Const states
+  const [user, setUser] = useState({
+    id: 1234,
+    avatar:
+      "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+    name: "João Barbosa",
+  });
   const [chatList, setChatList] = useState([
     {
       chatId: 1,
@@ -78,7 +84,7 @@ export default () => {
     <div className="app-window">
       <aside className="sidebar ">
         <header>
-          <img className="header--avatar" src="avatar.jpg" alt="Avatar user" />
+          <img className="header--avatar" src={user.avatar} alt="Avatar user" />
 
           <div className="header-buttons">
             <div className="header--btn">
@@ -115,7 +121,7 @@ export default () => {
         </div>
       </aside>
       <section className="content-area">
-        {activeChat.chatId !== undefined && <ChatWindow />}
+        {activeChat.chatId !== undefined && <ChatWindow user={user} />}
         {activeChat.chatId == undefined && <ChatIntro />}
       </section>
     </div>

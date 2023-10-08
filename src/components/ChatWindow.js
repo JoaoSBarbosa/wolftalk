@@ -1,7 +1,8 @@
 /* global SpeechRecognition, webkitSpeechRecognition */
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./ChatWindow.css";
+import MessageItem from "./MessageItem";
 
 import SearchIcon from "@mui/icons-material/Search";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -11,7 +12,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import SendIcon from "@mui/icons-material/Send";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import EmojiPicker from "emoji-picker-react";
-export default () => {
+export default ({ user }) => {
   let recognition = null;
 
   if ("SpeechRecognition" in window) {
@@ -23,10 +24,199 @@ export default () => {
       "O seu navegador não oferece suporte ao Reconhecimento de Fala."
     );
   }
+
+  const body = useRef();
   //  States
   const [emojiOpen, setEmojiOpen] = useState(false);
   const [inputText, setInputText] = useState("");
   const [listening, setListening] = useState(false);
+  const [list, setList] = useState([
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+    {
+      chatId: 1,
+      author: 123,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
+      body: "Browse through the icons below to find the one you need. The search field supports synonyms—for example, try searching for hamburger or logout",
+    },
+    {
+      chatId: 2,
+      author: 1234,
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
+      body: "Browse through the icons below to find the one you need.",
+    },
+
+    {
+      chatId: 3,
+      author: "Ellie",
+      image:
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
+      body: "Browse through ",
+    },
+  ]);
+
+  useEffect(() => {
+    // verifica se o conteudo que tem no body é maior do que a altura do próprio body
+    if (body.current.scrollHeight > body.current.offsetHeight) {
+      body.current.scrollTop =
+        body.current.scrollHeight - body.current.offsetHeight;
+    }
+  }, [list]);
+
   //  Funções
   const handleEmojiClick = (emojiObject) => {
     setInputText((prevInputText) => {
@@ -85,7 +275,11 @@ export default () => {
           </div>
         </div>
       </section>
-      <section className="chatWindow--body"></section>
+      <section ref={body} className="chatWindow--body">
+        {list.map((item, key) => (
+          <MessageItem key={key} data={item} user={user} />
+        ))}
+      </section>
 
       <section
         className="chatWindow--emojiarea"

@@ -7,7 +7,7 @@
 }
 .chatWindow--header {
   height: var(--size60);
-  border-bottom: 1px solid #ccc;
+  border-bottom: var(--size1) solid #ccc;
   display: var(--flex);
   justify-content: var(--spaceBetween);
   align-items: var(--center);
@@ -47,12 +47,20 @@
 }
 
 .chatWindow--body {
-  flex: 1;
+  flex: var(--flex1);
   overflow-y: auto;
   background-color: #ededed;
   background-size: cover;
   background-position: var(--center);
   background-image: url("https://uploaddeimagens.com.br/images/004/631/210/full/bk.png?1696770087");
+  padding: var(--size20) 30px;
+}
+.chatWindow--body::-webkit-scrollbar {
+  width: var(--size6);
+  height: var(--size6);
+}
+.chatWindow--body::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 175, 219, 0.8);
 }
 .chatWindow--footer {
   height: 62px;
@@ -67,7 +75,7 @@
   margin: var(--size0) var(--size15);
 }
 .chatWindow--inputarea {
-  flex: 1;
+  flex: var(--flex1);
 }
 .chatWindow--input {
   width: 100%;

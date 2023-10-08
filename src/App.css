@@ -11,14 +11,14 @@
   max-width: 415px;
   display: var(--flex);
   flex-direction: var(--flex-column);
-  border-right: 1px solid var(--color1);
+  border-right: var(--size1) solid var(--color1);
 }
 
 header {
   height: var(--size60);
   display: var(--flex);
   justify-content: var(--spaceBetween);
-  padding: 0 var(--size15);
+  padding: var(--size0) var(--size15);
   align-items: var(--center);
 }
 
@@ -49,7 +49,7 @@ header {
 
 .search {
   background-color: var(--bg3);
-  border-bottom: 1px solid var(--color2);
+  border-bottom: var(--size1) solid var(--color2);
   padding: 5px var(--size15);
 }
 .search--input {
@@ -61,24 +61,24 @@ header {
   padding: var(--size0) var(--size10);
 }
 .search--input input {
-  flex: 1;
+  flex: var(--flex1);
   border: var(--size0);
   outline: var(--size0);
   background-color: transparent;
   margin-left: var(--size10);
 }
 .chatList {
-  flex: 1;
+  flex: var(--flex1);
   background-color: var(--color4);
   overflow-y: auto;
 }
 .chatList::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+  width: var(--size6);
+  height: var(--size6);
 }
 .chatList::-webkit-scrollbar-thumb {
   background-color: rgba(54, 1, 70, 0.2);
 }
 .content-area {
-  flex: 1;
+  flex: var(--flex1);
 }

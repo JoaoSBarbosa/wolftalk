@@ -1,0 +1,27 @@
+@import url("../root.css");
+
+.messageLine {
+  margin-bottom: var(--size10);
+  display: var(--flex);
+}
+.messageItem {
+  background-color: #fff;
+  box-shadow: var(--size0) 1px 1px #ccc;
+  border-radius: var(--size10);
+  display: var(--flex);
+  flex-direction: var(--flex-column);
+  padding: 5px;
+  max-width: 80%;
+}
+.messageText {
+  font-size: 14px;
+  margin: 5px var(--size40) 5px 5px;
+}
+.messageDate {
+  font-size: 11px;
+  color: #999;
+  margin-right: 5px;
+  text-align: right;
+  height: 15px;
+  margin-top: -15px;
+}
