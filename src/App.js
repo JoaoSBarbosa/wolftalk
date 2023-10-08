@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import ChatListItem from "./components/ChatListItem";
-
+import ChatIntro from "./components/ChatIntro";
 import DonutLargeIcon from "@mui/icons-material/DonutLarge";
 import ChatIcon from "@mui/icons-material/Chat";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
@@ -30,11 +30,7 @@ export default () => {
     <div className="app-window">
       <aside className="sidebar ">
         <header>
-          <img
-            className="header--avatar"
-            src="https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039"
-            alt=""
-          />
+          <img className="header--avatar" src="avatar.jpg" alt="Avatar user" />
 
           <div className="header-buttons">
             <div className="header--btn">
@@ -65,7 +61,9 @@ export default () => {
           ))}
         </div>
       </aside>
-      <section className="content-area">Área de conteúdo</section>
+      <section className="content-area">
+        <ChatIntro />
+      </section>
     </div>
   );
 };
