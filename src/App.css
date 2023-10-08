@@ -58,12 +58,12 @@ header {
   border-radius: var(--size20);
   display: var(--flex);
   align-items: var(--center);
-  padding: 0 var(--size10);
+  padding: var(--size0) var(--size10);
 }
 .search--input input {
   flex: 1;
-  border: 0;
-  outline: 0;
+  border: var(--size0);
+  outline: var(--size0);
   background-color: transparent;
   margin-left: var(--size10);
 }

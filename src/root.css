@@ -6,18 +6,19 @@
   --color2: #eee;
   --color3: #999;
   --color4: #fff;
-  --color5:#919191;
+  --color5: #919191;
   --flex: flex;
   --flex-column: column;
   --spaceBetween: space-between;
   --center: center;
-  --size60:60px;
+  --size60: 60px;
   --size50: 50px;
   --size40: 40px;
   --size20: 20px;
   --size25: 25px;
   --size15: 15px;
   --size10: 10px;
+  --size0: 0px;
   --cursorPointer: pointer;
 }
 * {
@@ -25,6 +26,6 @@
 }
 body {
   background-color: var(--bg1);
-  margin: 0;
+  margin: var(--size0);
   font-family: "Segoe UI", Helvetica Neue, Helvetica, Lucida Grande, Arial;
 }

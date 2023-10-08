@@ -21,7 +21,7 @@
   height: var(--size40);
   width: var(--size40);
   border-radius: 50%;
-  margin: 0 var(--size15);
+  margin: var(--size0) var(--size15);
 }
 .chatWindow--headername {
   font-size: 17px;
@@ -30,7 +30,7 @@
 .chatWindow--headerbuttons {
   display: var(--flex);
   align-items: var(--center);
-  margin: 0 var(--size15);
+  margin: var(--size0) var(--size15);
 }
 .chatWindow--btn {
   height: var(--size40);
@@ -55,4 +55,31 @@
   background-image: url("https://uploaddeimagens.com.br/images/004/631/210/full/bk.png?1696770087");
 }
 .chatWindow--footer {
+  height: 62px;
+  display: var(--flex);
+  align-items: var(--center);
+}
+.chatWindow--pre,
+.chatWindow--pos {
+  display: var(--flex);
+}
+.chatWindow--pre {
+  margin: var(--size0) var(--size15);
+}
+.chatWindow--inputarea {
+  flex: 1;
+}
+.chatWindow--input {
+  width: 100%;
+  height: var(--size40);
+  border: var(--size0);
+  outline: var(--size0);
+  background-color: #fff;
+  border-radius: var(--size20);
+  font-size: var(--size15);
+  color: #4a4a4a;
+  padding-left: var(--size15);
+}
+.chatWindow--pos {
+  margin: var(--size0) var(--size15);
 }
