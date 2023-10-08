@@ -11,7 +11,14 @@ import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import EmojiPicker from "emoji-picker-react";
 export default () => {
   const [emojiOpen, setEmojiOpen] = useState(false);
-  const handleEmojiClick = () => {};
+  const [inputText, setInputText] = useState();
+
+  const handleEmojiClick = (e) => {
+
+    setInputText((prevInputText) => {
+      return prevInputText !== undefined ? prevInputText + e.emoji : e.emoji;
+    });
+  };
 
   const handleOpenEmoji = () => {
     setEmojiOpen(true);
@@ -77,6 +84,8 @@ export default () => {
           <input
             className="chatWindow--input"
             type="text"
+            value={inputText}
+            onChange={(e) => setInputText(e.target.value)}
             placeholder="Digite uma mensagem"
           />
         </div>

@@ -31,7 +31,7 @@ export default () => {
     },
     {
       chatId: 3,
-      titulo: "Kraton",
+      titulo: "Kratos",
       image:
         "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
     },
