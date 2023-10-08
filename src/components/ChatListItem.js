@@ -1,16 +1,16 @@
 import React from "react";
 import "./ChatListItem.css";
 
-export default ({ onClickProps, active }) => {
+export default ({ onClickProps, active, data }) => {
   return (
     <div
       className={`chatListItem ${active ? "active" : ""}`}
       onClick={onClickProps}
     >
-      <img className="chatListItem--avatar" src="avatar2.jpg" alt="contato" />
+      <img className="chatListItem--avatar" src={data.image} alt="contato" />
       <div className="chatListItem--lines">
         <div className="chatListItem--line">
-          <div className="chatListItem--name">Maria</div>
+          <div className="chatListItem--name">{data.titulo}</div>
           <div className="chatListItem--date">21:46</div>
         </div>
 

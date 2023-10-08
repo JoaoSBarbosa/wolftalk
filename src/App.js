@@ -19,57 +19,57 @@ export default () => {
   const [chatList, setChatList] = useState([
     {
       chatId: 1,
-      titulo: "Fulano de Tal",
+      titulo: "Ellie",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/174/full/avatar0.jpg?1696765805",
     },
     {
       chatId: 2,
-      titulo: "Fulano de Tal",
+      titulo: "Maria",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/055/full/avatar2.jpg?1696726173",
     },
     {
       chatId: 3,
-      titulo: "Fulano de Tal",
+      titulo: "Kraton",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/175/full/kraton.jpg?1696765999",
     },
     {
       chatId: 4,
-      titulo: "Fulano de Tal",
+      titulo: "Fernando",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/164/full/avatar4.jpg?1696765281",
     },
     {
       chatId: 5,
-      titulo: "Fulano de Tal",
+      titulo: "Welliane",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/165/full/avatar5.jpg?1696765305",
     },
     {
       chatId: 6,
-      titulo: "Fulano de Tal",
+      titulo: "Lucas",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/169/full/avatar6.jpg?1696765528",
     },
     {
       chatId: 7,
-      titulo: "Fulano de Tal",
+      titulo: "Jesica",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/170/full/avatar7.jpg?1696765559",
     },
     {
       chatId: 8,
-      titulo: "Fulano de Tal",
+      titulo: "Juan",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/171/full/avatar8.jpg?1696765579",
     },
     {
       chatId: 9,
-      titulo: "Fulano de Tal",
+      titulo: "Gabi",
       image:
-        "https://uploaddeimagens.com.br/images/004/631/029/full/avatar.jpg?1696723039",
+        "https://uploaddeimagens.com.br/images/004/631/172/full/avatar9.jpg?1696765595",
     },
   ]);
   const [activeChat, setActiveChat] = useState({});
@@ -107,6 +107,7 @@ export default () => {
           {chatList.map((item, key) => (
             <ChatListItem
               key={key}
+              data={item}
               active={activeChat.chatId === chatList[key].chatId}
               onClickProps={() => setActiveChat(chatList[key])}
             />
