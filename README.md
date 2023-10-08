@@ -1,4 +1,5 @@
-![GitHub top language](https://img.shields.io/github/languages/top/JoaoSBarbosa/wolftalk)
+![GitHub top language](https://img.shields.io/github/languages/top/JoaoSBarbosa/wolftalk) ![GitHub language count](https://img.shields.io/github/languages/count/JoaoSBarbosa/wolftalk)
+
 
 # WhatsApp Clone com React e Firebase
 
