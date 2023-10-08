@@ -15,7 +15,7 @@
 }
 
 header {
-  height: 60px;
+  height: var(--size60);
   display: var(--flex);
   justify-content: var(--spaceBetween);
   padding: 0 var(--size15);
@@ -41,7 +41,7 @@ header {
   cursor: var(--cursorPointer);
 }
 .header--icon {
-  color: #919191;
+  color: var(--color5);
 }
 .search--icon {
   font-size: small;
@@ -80,5 +80,5 @@ header {
   background-color: rgba(54, 1, 70, 0.2);
 }
 .content-area {
-  width: 75%;
+  flex: 1;
 }

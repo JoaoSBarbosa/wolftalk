@@ -1,1 +1,58 @@
-@import url('../root.css');
+@import url("../root.css");
+
+.chatWindow {
+  display: var(--flex);
+  flex-direction: var(--flex-column);
+  height: 100%;
+}
+.chatWindow--header {
+  height: var(--size60);
+  border-bottom: 1px solid #ccc;
+  display: var(--flex);
+  justify-content: var(--spaceBetween);
+  align-items: var(--center);
+}
+.chatWindow--headerinfo {
+  display: var(--flex);
+  align-items: var(--center);
+  cursor: var(--cursorPointer);
+}
+.chatWindow--headeravatar {
+  height: var(--size40);
+  width: var(--size40);
+  border-radius: 50%;
+  margin: 0 var(--size15);
+}
+.chatWindow--headername {
+  font-size: 17px;
+  color: #000;
+}
+.chatWindow--headerbuttons {
+  display: var(--flex);
+  align-items: var(--center);
+  margin: 0 var(--size15);
+}
+.chatWindow--btn {
+  height: var(--size40);
+  width: var(--size40);
+
+  border-radius: 50%;
+  display: var(--flex);
+  justify-content: var(--center);
+  align-items: var(--center);
+  cursor: var(--cursorPointer);
+}
+.chaticon {
+  color: var(--color5);
+}
+
+.chatWindow--body {
+  flex: 1;
+  overflow-y: auto;
+  background-color: #ededed;
+  background-size: cover;
+  background-position: var(--center);
+  background-image: url("https://uploaddeimagens.com.br/images/004/631/210/full/bk.png?1696770087");
+}
+.chatWindow--footer {
+}
