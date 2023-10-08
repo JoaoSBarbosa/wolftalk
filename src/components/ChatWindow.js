@@ -1,3 +1,5 @@
+/* global SpeechRecognition, webkitSpeechRecognition */
+
 import React, { useState } from "react";
 import "./ChatWindow.css";
 
@@ -10,13 +12,27 @@ import SendIcon from "@mui/icons-material/Send";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
 import EmojiPicker from "emoji-picker-react";
 export default () => {
+  let recognition = null;
+
+  if ("SpeechRecognition" in window) {
+    recognition = new SpeechRecognition();
+  } else if ("webkitSpeechRecognition" in window) {
+    recognition = new webkitSpeechRecognition();
+  } else {
+    console.log(
+      "O seu navegador não oferece suporte ao Reconhecimento de Fala."
+    );
+  }
+  //  States
   const [emojiOpen, setEmojiOpen] = useState(false);
-  const [inputText, setInputText] = useState();
-
-  const handleEmojiClick = (e) => {
-
+  const [inputText, setInputText] = useState("");
+  const [listening, setListening] = useState(false);
+  //  Funções
+  const handleEmojiClick = (emojiObject) => {
     setInputText((prevInputText) => {
-      return prevInputText !== undefined ? prevInputText + e.emoji : e.emoji;
+      return prevInputText !== ""
+        ? prevInputText + emojiObject.emoji
+        : emojiObject.emoji;
     });
   };
 
@@ -27,6 +43,25 @@ export default () => {
   const handleCloseEmoji = () => {
     setEmojiOpen(false);
   };
+
+  const handleVoicTextClick = () => {
+    if (recognition !== null) {
+      recognition.onstart = () => {
+        setListening(true);
+      };
+      recognition.onend = () => {
+        setListening(false);
+      };
+
+      recognition.onresult = (event) => {
+        setInputText(event.results[0][0].transcript);
+      };
+
+      recognition.start();
+    }
+  };
+
+  const handleSendClick = () => {};
   return (
     <div className="chatWindow">
       <section className="chatWindow--header">
@@ -91,9 +126,20 @@ export default () => {
         </div>
 
         <div className="chatWindow--pos">
-          <div className="chatWindow--btn">
-            <SendIcon className="chaticon" />
-          </div>
+          {inputText === "" && (
+            <div className="chatWindow--btn" onClick={handleVoicTextClick}>
+              <KeyboardVoiceIcon
+                className="chaticon"
+                style={{ color: listening ? "#126ece" : "#919191" }}
+              />
+            </div>
+          )}
+
+          {inputText !== "" && (
+            <div className="chatWindow--btn" onClick={handleSendClick}>
+              <SendIcon className="chaticon" />
+            </div>
+          )}
         </div>
       </section>
     </div>
