@@ -72,6 +72,13 @@ header {
   background-color: var(--color4);
   overflow-y: auto;
 }
+.chatList::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.chatList::-webkit-scrollbar-thumb {
+  background-color: rgba(54, 1, 70, 0.2);
+}
 .content-area {
   width: 75%;
 }
