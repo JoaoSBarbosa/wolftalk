@@ -35,12 +35,12 @@
 .chatWindow--btn {
   height: var(--size40);
   width: var(--size40);
-
   border-radius: 50%;
   display: var(--flex);
   justify-content: var(--center);
   align-items: var(--center);
   cursor: var(--cursorPointer);
+  transition: all ease 3s;
 }
 .chaticon {
   color: var(--color5);
@@ -82,4 +82,17 @@
 }
 .chatWindow--pos {
   margin: var(--size0) var(--size15);
+}
+
+.chatWindow--emojiarea {
+  height: 350px;
+  overflow-y: hidden;
+  transition: all ease 0.5s;
+}
+aside.EmojiPickerReact {
+  width: auto !important;
+  background: none;
+}
+.epr-emoji-list .epr-emoji-category-label {
+  background: none !important;
 }

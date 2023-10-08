@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./ChatWindow.css";
 
 import SearchIcon from "@mui/icons-material/Search";
@@ -8,8 +8,18 @@ import EmojiEmotionsIcon from "@mui/icons-material/EmojiEmotions";
 import CloseIcon from "@mui/icons-material/Close";
 import SendIcon from "@mui/icons-material/Send";
 import KeyboardVoiceIcon from "@mui/icons-material/KeyboardVoice";
-
+import EmojiPicker from "emoji-picker-react";
 export default () => {
+  const [emojiOpen, setEmojiOpen] = useState(false);
+  const handleEmojiClick = () => {};
+
+  const handleOpenEmoji = () => {
+    setEmojiOpen(true);
+  };
+
+  const handleCloseEmoji = () => {
+    setEmojiOpen(false);
+  };
   return (
     <div className="chatWindow">
       <section className="chatWindow--header">
@@ -35,11 +45,32 @@ export default () => {
       </section>
       <section className="chatWindow--body"></section>
 
+      <section
+        className="chatWindow--emojiarea"
+        style={{ height: emojiOpen ? "450px" : "0px" }}
+      >
+        <EmojiPicker onEmojiClick={handleEmojiClick} />
+      </section>
+
       <section className="chatWindow--footer">
         <div className="chatWindow--pre">
-          <div className="chatWindow--btn">
-            <EmojiEmotionsIcon className="chaticon" />
+          {emojiOpen && (
+            <div className="chatWindow--btn" onClick={handleCloseEmoji}>
+              <CloseIcon className="chaticon" />
+            </div>
+          )}
+
+          <div className="chatWindow--btn" onClick={handleOpenEmoji}>
+            <EmojiEmotionsIcon
+              className="chaticon"
+              style={{ color: emojiOpen ? "#009688" : "#919191" }}
+            />
           </div>
+          {/* {!emojiOpen && (
+            <div className="chatWindow--btn" onClick={handleOpenEmoji}>
+              <EmojiEmotionsIcon className="chaticon" />
+            </div>
+          )} */}
         </div>
 
         <div className="chatWindow--inputarea">
